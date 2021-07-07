@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+
+    <title>ImgQuiz</title>
+
+    <style>
+        #logo {
+            font-family: 'Lobster', monospace;
+            color: red;
+            cursor: pointer;
+            margin: 0;
+            text-align: center;
+            
+        }
+        #topHeader {
+            font-family: 'Montserrat', monospace;
+            text-align: center;
+        }
+        #rules {
+            font-family: monospace;
+        }
+        span {
+            color: red;
+        }
+        h2 {
+            font-family: 'Montserrat';
+            text-align: center;
+        }
+        .easyImageClass {
+            width: 50vh;
+            border-radius: 10%;
+            transition: 0.1s;
+        }
+        .easyImageClass:hover {
+            opacity: 0.85;
+            border-radius: 5%;
+            transition: 0.1s;
+        }
+        #ezImages {
+            text-align: center;
+        }
+        .imgLabels {
+            font-family: 'Montserrat';
+        }
+    </style>
+</head>
+<body>
+    <div class="topMostHeader">
+        <h1 id="logo">
+            ImgQuiz
+        </h1>
+        <br>
+        <hr>
+        <br>
+        <h1 id="topHeader">
+            Free Image Quiz
+        </h1>
+        <br>
+        <h3 id="rules">
+            <ul>
+                <span>Instructions</span>
+                <li>Images will be provided, you have to guess the country of the image.</li>
+                <li>If you are unable to guess the image, hovering on the image will give you a hint.</li>
+                <li>If you still are unable to guess the image, click on it. It will reveal the answer.</li>
+            </ul>
+        </h3>
+    </div>
+    <br>
+    <hr>
+    <br>
+    <div class="easyImagesDiv">
+        <h2>
+           1. Eazy Images
+        </h2>
+        <br>
+        <div id="ezImages">
+            <img src="tajmahal.jpg" alt="Name of this place is Taj Mahal" class="easyImageClass" id="taj">
+            <br>
+            <div id="fezimg" class='imgLabels'></div>
+            <br>
+            <br>
+            <img src="tower.jpg" alt="Name of this place is Eiffel Tower" class="easyImageClass" id="tower">
+            <br>
+            <div id="sezimg" class='imgLabels'></div>
+            <br>
+            <br>
+            <img src="burj.jpg" alt="Name of this place is Burj Khalifa" class="easyImageClass" id="burj">
+            <div id="tezimg" class='imgLabels'></div>
+
+        </div>
+    </div>
+
+    <script>
+        var pics = document.getElementsByTagName('img')
+        var taj = document.getElementById('taj')
+        var tower = document.getElementById('tower');
+        var burj = document.getElementById('burj');
+        var labelChanger = document.getElementById('fezimg')
+        var labelChanger2 = document.getElementById('sezimg')
+        var labelChanger3 = document.getElementById('tezimg')
+
+        var onClickChanger = function (){
+            labelChanger.textContent = 'India';
+        }
+        var onClickChanger2 = function () {
+            
+            labelChanger2.textContent = 'France';
+        }
+        var onClickChanger3 = function() {
+            labelChanger3.textContent = 'Dubai';
+        }
+        taj.addEventListener('click', onClickChanger);
+        tower.addEventListener('click', onClickChanger2);
+        burj.addEventListener('click', onClickChanger3);
+
+        for(var i = 0; i < pics.length; i++) {
+            pics[i].title = pics[i].alt;
+        }
+    </script>
+</body>
+</html>
