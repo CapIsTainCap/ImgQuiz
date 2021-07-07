@@ -19,7 +19,36 @@
             cursor: pointer;
             margin: 0;
             text-align: center;
-            
+            transition: 0.3s;
+        }
+        #logo:hover {
+            transition: 0.3s;
+            animation-name: logoColor;
+            animation-iteration-count: infinite;
+            animation-duration: 500ms;
+        }
+        /*
+        #6700FF 
+        #8700fe
+        #d900ff
+        #f600fe
+        */
+        @keyframes logoColor {
+            0% {
+                color: #f600fe;
+            }
+            25%{
+                color: #6700FF;
+            }
+            50% {
+                color: #8700fe;
+            }
+            75% {
+                color:  #d900ff;
+            }
+            100% {
+                color: #f600fe;
+            }
         }
         #topHeader {
             font-family: 'Montserrat', monospace;
@@ -50,6 +79,7 @@
         }
         .imgLabels {
             font-family: 'Montserrat';
+            
         }
     </style>
 </head>
@@ -125,6 +155,15 @@
         for(var i = 0; i < pics.length; i++) {
             pics[i].title = pics[i].alt;
         }
+
+        var logo = document.getElementById('logo');
+
+        var onBackgroundClick = function() {
+            document.body.style.background = 'black';
+            document.body.style.color = 'white';
+        } 
+
+        logo.addEventListener('click', onBackgroundClick);  
     </script>
 </body>
 </html>
